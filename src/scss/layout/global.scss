@@ -10,11 +10,15 @@
 .light {
   --bg-color: #fff;
   --color: #212024;
+  --action-elm-bg: #212024;
+  --action-elm-color: #fff;
 }
 
 .dark {
   --bg-color: #212024;
   --color: #fff;
+  --action-elm-bg: #fff;
+  --action-elm-color: #212024;
 }
 
 body {

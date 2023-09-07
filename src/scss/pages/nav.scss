@@ -1,0 +1,42 @@
+@import "../mixins/flex/flex.scss";
+@import "../mixins/flex/flex-col.scss";
+@import "../mixins/reset/reset-element.scss";
+
+.container .home-header nav,
+.container .settings-header nav {
+  @include flex(row, space-between, center);
+  margin-top: 0.25rem;
+
+  .front-section {
+    @include flex-col;
+    gap: 0.25rem;
+
+    .title {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .url {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  }
+
+  .back-section {
+    button {
+      @include reset-element;
+      background-color: var(--action-elm-bg);
+      color: var(--action-elm-color);
+      padding: 0.3rem 0.7rem;
+      border-radius: $rounded;
+      font-size: 0.85rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition-duration: $smooth;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

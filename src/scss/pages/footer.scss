@@ -1,22 +1,24 @@
-@import "../mixins/flex/flex.scss";
-@import "../variables/spaces.scss";
-@import "../variables/colors.scss";
-@import "../variables/sizes.scss";
+@import "../mixins/flex/flex-col.scss";
 
-footer {
+.container footer {
+  @include flex-col;
+  gap: 0.5rem;
   position: absolute;
   bottom: 0;
   left: 0;
   width: $full;
-  @include flex(row, center, center);
-  padding: 0.5rem 0;
-  background-color: $black_color;
-  color: $white_color;
+  text-align: center;
+  background-color: var(--action-elm-bg);
+  color: var(--action-elm-color);
+  padding: 0.25rem 0;
 
-  .content {
-    font-weight: 400;
+  .game-developer,
+  .game-version {
+    font-size: 1rem;
+    font-weight: 500;
 
-    .developer {
+    span {
+      font-size: 0.9rem;
       font-weight: bold;
     }
   }

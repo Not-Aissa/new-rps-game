@@ -1,0 +1,10 @@
+@import "../mixins/flex/flex-col.scss";
+
+.container .settings-header {
+  @include flex-col;
+  gap: 1rem;
+
+  &.hide {
+    display: none;
+  }
+}

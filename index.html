@@ -5,48 +5,146 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/main.scss" />
-    <title>Vite + Scss + TypeScript</title>
+    <title>Rock paper scissors Game</title>
   </head>
-  <body class="light">
+  <body>
     <main id="app" class="container">
-      <header>
-        <section class="logo-section">
-          <a class="vite-link" href="https://vitejs.dev/" target="_blank">
-            <div class="vite">
-              <img src="/vite.svg" alt="vite" />
-            </div>
-          </a>
+      <header class="home-header">
+        <nav>
+          <section class="front-section">
+            <p class="title">RPS Game</p>
 
-          <a class="scss-link" href="https://sass-lang.com/" target="_blank">
-            <div class="scss">
-              <img src="/scss.svg" alt="scss" />
-            </div>
-          </a>
+            <p class="url">Home</p>
+          </section>
 
-          <a
-            class="typescript-link"
-            href="https://www.typescriptlang.org/"
-            target="_blank"
-          >
-            <div class="typescript">
-              <img src="/typescript.svg" alt="typescript" />
-            </div>
-          </a>
-        </section>
+          <section class="back-section">
+            <button id="go_settings_btn">Settings</button>
+          </section>
+        </nav>
 
-        <section class="title-section">
-          <p class="text">Vite + Scss + TypeScript</p>
-        </section>
+        <header class="game-header">
+          <section class="player-section">
+            <p class="name player">You</p>
 
-        <section class="counter-section">
-          <button id="counter_btn">Count is <span id="count"></span></button>
-        </section>
+            <p class="choice player-choice">
+              Choice: <span id="player_choice"></span>
+            </p>
+
+            <p class="points player-points">
+              Points: <span id="player_points"></span>
+            </p>
+
+            <p class="win-times player-win-times">
+              Win times: <span id="player_win_times"></span>
+            </p>
+          </section>
+
+          <section class="computer-section">
+            <p class="name computer">Computer</p>
+
+            <p class="choice computer-choice">
+              Choice: <span id="computer_choice"></span>
+            </p>
+
+            <p class="points computer-points">
+              Points: <span id="computer_points"></span>
+            </p>
+
+            <p class="win-times computer-win-times">
+              Win times: <span id="computer_win_times"></span>
+            </p>
+          </section>
+        </header>
+
+        <header class="game-actions-header">
+          <button class="player-choice-btn" data-choice="rock">Rock</button>
+
+          <button class="player-choice-btn" data-choice="paper">Paper</button>
+
+          <button class="player-choice-btn" data-choice="scissors">
+            Scissors
+          </button>
+        </header>
+
+        <header class="game-info-header">
+          <section class="game-result-section">
+            <p class="game-play-result">
+              Result: <span id="game_play_result"></span>
+            </p>
+          </section>
+        </header>
+      </header>
+
+      <header class="settings-header">
+        <nav>
+          <section class="front-section">
+            <p class="title">RPS Game</p>
+
+            <p class="url">Settings</p>
+          </section>
+
+          <section class="back-section">
+            <button id="go_home_btn">Home</button>
+          </section>
+        </nav>
+
+        <header class="settings-options-header">
+          <section class="setting-section theme-section">
+            <p class="setting-content">Game theme:</p>
+
+            <select id="theme_select">
+              <option value="light">Light</option>
+
+              <option value="dark">Dark</option>
+            </select>
+          </section>
+
+          <section class="setting-section computer-level-section">
+            <p class="setting-content">Computer level:</p>
+
+            <select id="computer_level_select">
+              <option value="easy">Easy</option>
+
+              <option value="medium">Medium</option>
+
+              <option value="hard">Hard</option>
+            </select>
+          </section>
+
+          <section class="setting-section pm-points-section">
+            <p class="setting-content">Player max points to win:</p>
+
+            <input
+              id="pm_points_input"
+              type="number"
+              placeholder="Player max points to win"
+            />
+          </section>
+
+          <section class="setting-section decreasePointWEGI-section">
+            <p class="setting-content">Decrease point when enemy get it:</p>
+
+            <select id="decrease_point_WEGI_select">
+              <option value="true">Yes</option>
+
+              <option value="false">No</option>
+            </select>
+          </section>
+
+          <section class="setting-section reset-game-section">
+            <p class="setting-content">Reset the game:</p>
+
+            <button id="reset_game_btn">Reset</button>
+          </section>
+        </header>
       </header>
 
       <footer>
-        <p class="content">
-          Developed by <span class="developer">Aissa Bedr</span>
+        <p class="game-developer">
+          Game developed by <span id="developer_elm"></span>
         </p>
+
+        <p class="game-version">Game version <span id="version_elm"></span></p>
       </footer>
     </main>
     <script type="module" src="/src/main.ts"></script>

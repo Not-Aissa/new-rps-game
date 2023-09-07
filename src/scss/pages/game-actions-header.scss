@@ -1,0 +1,31 @@
+@import "../mixins/grid/grid-cols.scss";
+@import "../mixins/reset/reset-element.scss";
+@import "../variables/borders.scss";
+@import "../variables/transitions.scss";
+
+.container .home-header .game-actions-header {
+  @include grid-cols(3);
+  gap: 0.5rem;
+
+  button {
+    @include reset-element;
+    background-color: var(--action-elm-bg);
+    color: var(--action-elm-color);
+    padding: 0.4rem 0;
+    border-radius: $rounded;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition-duration: $smooth;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &.hide {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+}
